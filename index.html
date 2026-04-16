@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dream | Салон красоты Пермь</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mv: {
+                            cream: '#FDFBF7',
+                            gold: '#C5A059',
+                            taupe: '#4A4440',
+                            blush: '#F5E6E0',
+                            dark: '#1A1A1A',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { background-color: #FDFBF7; color: #4A4440; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
+        
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #FDFBF7; }
+        ::-webkit-scrollbar-thumb { background: #C5A059; border-radius: 10px; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 1.2s ease-out forwards; }
+    </style>
+</head>
+<body>
+
+    <!-- FLOATING MAP BUTTON -->
+    <a href="https://yandex.com/maps/org/my_dream/118883829388/" target="_blank" class="fixed bottom-8 right-8 z-50 bg-mv-gold text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
+        <i data-lucide="map-pin"></i>
+    </a>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-serif tracking-[0.2em] text-mv-taupe uppercase">My Dream</a>
+            <div class="hidden md:flex space-x-10 items-center">
+                <a href="#services" class="text-[10px] uppercase tracking-[0.2em] hover:text-mv-gold transition font-bold">Услуги</a>
+                <a href="#about" class="text-[10px] uppercase tracking-[0.2em] hover:text-mv-gold transition font-bold">О нас</a>
+                <a href="#contact" class="text-[10px] uppercase tracking-[0.2em] hover:text-mv-gold transition font-bold">Контакты</a>
+                <a href="#booking" class="bg-mv-dark text-white px-8 py-3 text-[10px] uppercase tracking-[0.2em] hover:bg-mv-gold transition duration-500 rounded-sm shadow-xl font-bold">Запись</a>
+            </div>
+            <button class="md:hidden" onclick="toggleMenu(true)">
+                <i data-lucide="menu" class="w-6 h-6 text-mv-taupe"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 bg-mv-cream z-[60] flex flex-col items-center justify-center space-y-10 transition-all duration-500 translate-y-full">
+        <button class="absolute top-8 right-8" onclick="toggleMenu(false)">
+            <i data-lucide="x" class="w-8 h-8 text-mv-taupe"></i>
+        </button>
+        <a href="#services" onclick="toggleMenu(false)" class="text-3xl font-serif text-mv-taupe uppercase">Услуги</a>
+        <a href="#about" onclick="toggleMenu(false)" class="text-3xl font-serif text-mv-taupe uppercase">О нас</a>
+        <a href="#contact" onclick="toggleMenu(false)" class="text-3xl font-serif text-mv-taupe uppercase">Контакты</a>
+        <a href="#booking" onclick="toggleMenu(false)" class="text-3xl font-serif text-mv-gold uppercase">Запись</a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen flex items-center justify-center text-center px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://i.ibb.co/5W41BxLQ/s-V7e0-Cha-Km-Dx-Zqo-Nsh-K7-HGy-RC2n-Qlv-YUXue-SLj9-Wu59qrp-Xjz-Jb-W3-ZNl-Ps-YPrc1-TPGG9-FQGje4-JHl8-BK3-KOf.jpg" class="w-full h-full object-cover brightness-[0.45]" alt="Hero Banner">
+        </div>
+        <div class="relative z-10 text-white animate-fade-in w-full max-w-4xl px-4">
+            <div class="flex justify-center mb-6 text-mv-gold">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+                <span class="ml-4 text-[10px] uppercase tracking-[0.4em] text-white self-center font-bold">Beauty Salon Perm</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-serif mb-8 leading-none tracking-tight">My Dream</h1>
+            <p class="text-[11px] md:text-[13px] uppercase tracking-[0.3em] mb-12 opacity-90 max-w-2xl mx-auto leading-relaxed">
+                г. Пермь, ул. 5-я Линия, 1Б
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#booking" class="w-full sm:w-auto bg-mv-gold text-white px-12 py-5 text-[11px] uppercase tracking-[0.3em] hover:bg-white hover:text-mv-dark transition-all duration-500 rounded-sm font-bold shadow-2xl">Записаться</a>
+                <a href="#services" class="w-full sm:w-auto border border-white/50 backdrop-blur-md text-white px-12 py-5 text-[11px] uppercase tracking-[0.3em] hover:bg-white hover:text-mv-dark transition-all duration-500 rounded-sm font-bold">Услуги и Прайс</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 bg-mv-cream px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <span class="text-mv-gold text-[10px] uppercase tracking-[0.4em] font-bold block mb-4">Наши услуги</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-mv-taupe mb-6">Beauty & Aesthetics</h2>
+                <div class="w-20 h-1 bg-mv-gold mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Men -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-mv-blush overflow-hidden flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/2 aspect-[4/5] overflow-hidden rounded-2xl shadow-md">
+                        <img src="https://i.ibb.co/Cpp3Gj4q/decf180dbb3c46348d621d3b7ecb25f3.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="md:w-1/2 flex flex-col justify-center">
+                        <h3 class="text-2xl font-serif mb-6 border-b border-mv-blush pb-4">Мужской зал</h3>
+                        <ul class="space-y-3 text-sm font-medium tracking-wide">
+                            <li class="flex justify-between"><span>Модельная стрижка</span> <span class="text-mv-gold">от 700 ₽</span></li>
+                            <li class="flex justify-between"><span>Детская стрижка</span> <span class="text-mv-gold">от 600 ₽</span></li>
+                            <li class="flex justify-between"><span>Оформление бороды</span> <span class="text-mv-gold">200-400 ₽</span></li>
+                            <li class="flex justify-between"><span>Тонирование</span> <span class="text-mv-gold">от 300 ₽</span></li>
+                            <li class="flex justify-between"><span>Мытье головы</span> <span class="text-mv-gold">100 ₽</span></li>
+                            <li class="flex justify-between"><span>Вокс (уши, нос)</span> <span class="text-mv-gold">от 300 ₽</span></li>
+                            <li class="flex justify-between"><span>Классическое бритье</span> <span class="text-mv-gold">от 600 ₽</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Lashes & Brows -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-mv-blush overflow-hidden flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/2 flex flex-col justify-center order-2 md:order-1">
+                        <h3 class="text-2xl font-serif mb-4 border-b border-mv-blush pb-2 text-mv-taupe">Ресницы и Брови</h3>
+                        <div class="space-y-6 text-sm font-medium tracking-wide">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-widest text-mv-gold font-black mb-2">Lashes</p>
+                                <ul class="space-y-1">
+                                    <li class="flex justify-between"><span>Классика</span> <span>1500 ₽</span></li>
+                                    <li class="flex justify-between"><span>Объём 2D</span> <span>1600 ₽</span></li>
+                                    <li class="flex justify-between"><span>Объём 3D</span> <span>1700 ₽</span></li>
+                                    <li class="flex justify-between text-[11px]"><span>Снятие (чужая работа)</span> <span>200 ₽</span></li>
+                                    <li class="flex justify-between"><span>Ламинирование</span> <span>1200 ₽</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-widest text-mv-gold font-black mb-2">Brows</p>
+                                <ul class="space-y-1">
+                                    <li class="flex justify-between"><span>Оформление воском</span> <span>300 ₽</span></li>
+                                    <li class="flex justify-between"><span>Оформление + окрас</span> <span>500 ₽</span></li>
+                                    <li class="flex justify-between"><span>Оформление + хна</span> <span>700 ₽</span></li>
+                                    <li class="flex justify-between"><span>Ламинирование + хна</span> <span>1000 ₽</span></li>
+                                    <li class="flex justify-between"><span>Ламинирование</span> <span>700 ₽</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 aspect-[4/5] overflow-hidden rounded-2xl shadow-md order-1 md:order-2">
+                        <img src="https://i.ibb.co/QvFtgDHD/122224564-375782766800323-4181425100806826705-n-scaled.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Women Section -->
+            <div class="mt-16 bg-white p-8 rounded-3xl shadow-sm border border-mv-blush">
+                <div class="max-w-3xl mx-auto mb-12 overflow-hidden rounded-2xl shadow-xl">
+                    <img src="https://i.ibb.co/fGpVydW5/XL-17.jpg" class="w-full h-full object-cover aspect-video md:aspect-[21/9]" alt="Female Hair Design">
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="text-4xl font-serif mb-12 text-center text-mv-taupe">Женский зал</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 mb-20">
+                        <div class="space-y-4">
+                            <div class="flex justify-between border-b border-mv-blush pb-2"><span>Тонирование</span> <span class="font-bold">от 1500 ₽</span></div>
+                            <div class="flex justify-between border-b border-mv-blush pb-2"><span>Мелирование</span> <span class="font-bold">от 1500 ₽</span></div>
+                            <div class="flex justify-between border-b border-mv-blush pb-2"><span>Химия, биозавивка</span> <span class="font-bold">от 2000 ₽</span></div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between border-b border-mv-blush pb-2"><span>Модельная стрижка</span> <span class="font-bold">от 600 ₽</span></div>
+                            <div class="flex justify-between border-b border-mv-blush pb-2"><span>Укладка</span> <span class="font-bold">от 700 ₽</span></div>
+                            <div class="flex justify-between border-b border-mv-blush pb-2"><span>Уходы</span> <span class="font-bold">от 700 ₽</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 3 PRICE LIST IMAGES - ALIGNED PROPERLY -->
+                    <div class="text-center mb-8">
+                        <p class="text-xs uppercase tracking-widest text-mv-gold font-black">Полный прайс-лист</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start">
+                        <div class="rounded-xl shadow-xl border border-mv-blush overflow-hidden bg-white hover:scale-[1.02] transition-transform duration-500">
+                            <img src="https://i.ibb.co/wN0XqF0N/1gh8d-Ibx-Gi-A.jpg" class="w-full h-auto block" alt="Pricelist 1">
+                        </div>
+                        <div class="rounded-xl shadow-xl border border-mv-blush overflow-hidden bg-white hover:scale-[1.02] transition-transform duration-500">
+                            <img src="https://i.ibb.co/9mmF116L/iz6-OTDi-Mv-D4.jpg" class="w-full h-auto block" alt="Pricelist 2">
+                        </div>
+                        <div class="rounded-xl shadow-xl border border-mv-blush overflow-hidden bg-white hover:scale-[1.02] transition-transform duration-500">
+                            <img src="https://i.ibb.co/qK3zqhj/Eij-N0-YHa4-Ik.jpg" class="w-full h-auto block" alt="Pricelist 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-white px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <h2 class="text-4xl font-serif text-mv-taupe">Ждем вас в гости</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-5">
+                        <div class="w-12 h-12 bg-mv-gold/10 flex items-center justify-center rounded-2xl shrink-0">
+                            <i data-lucide="map-pin" class="text-mv-gold w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-mv-taupe text-lg">My Dream</p>
+                            <p class="text-mv-taupe/80">г. Пермь, ул. 5-я Линия, 1Б</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-5">
+                        <div class="w-12 h-12 bg-mv-gold/10 flex items-center justify-center rounded-2xl shrink-0">
+                            <i data-lucide="phone" class="text-mv-gold w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-mv-taupe text-lg">+7 (922) 373-06-05</p>
+                            <p class="text-mv-taupe/60 text-sm">Открыто ежедневно до 20:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="https://yandex.com/maps/org/my_dream/118883829388/" target="_blank" 
+                       class="inline-flex items-center justify-center gap-3 bg-red-600 text-white px-8 py-5 text-xs uppercase tracking-widest hover:bg-red-700 transition rounded-xl shadow-lg font-bold">
+                        <i data-lucide="map"></i> Яндекс Карты
+                    </a>
+                    <a href="https://vk.ru/skrasoty90" target="_blank" 
+                       class="inline-flex items-center justify-center gap-3 bg-[#0077FF] text-white px-8 py-5 text-xs uppercase tracking-widest hover:bg-blue-700 transition rounded-xl shadow-lg font-bold">
+                        <i data-lucide="share-2"></i> Сообщество VK
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                    <img src="https://i.ibb.co/YT37HGMP/Mqf-GNcm-Q80c.jpg" class="w-full h-full object-cover" alt="Location Map">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ONLINE REGISTRATION SECTION -->
+    <section id="booking" class="py-24 bg-mv-cream px-6">
+        <div class="max-w-5xl mx-auto bg-mv-dark text-white shadow-2xl rounded-[3rem] overflow-hidden flex flex-col md:flex-row border border-mv-blush">
+            <div class="md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
+                <h2 class="text-4xl font-serif mb-6 text-mv-gold">Онлайн запись</h2>
+                <p class="text-sm opacity-60 mb-10 leading-relaxed uppercase tracking-widest font-medium">Выберите удобную платформу для онлайн-записи.</p>
+                <div class="space-y-6 text-[11px] uppercase tracking-widest font-bold">
+                    <div class="flex items-center gap-4"><i data-lucide="phone" class="w-5 h-5 text-mv-gold"></i> +7 (922) 373-06-05</div>
+                    <div class="flex items-center gap-4"><i data-lucide="clock" class="w-5 h-5 text-mv-gold"></i> 09:00 - 20:00</div>
+                </div>
+            </div>
+            <div class="md:w-1/2 p-10 md:p-16 flex flex-col justify-center bg-white space-y-4">
+                <a href="https://max.ru/join/_z0r3dZbJYmJoG3PvZqn43pZG_eu8LoOZeKSrF0h9Tk" target="_blank" 
+                   class="w-full bg-mv-gold text-white py-6 rounded-2xl flex justify-center items-center gap-3 hover:bg-mv-dark transition-all uppercase text-[12px] tracking-widest font-black shadow-lg">
+                    <i data-lucide="calendar" class="w-5 h-5"></i>
+                    Запись через Max.ru
+                </a>
+                <a href="https://vk.ru/skrasoty90" target="_blank" 
+                   class="w-full bg-[#0077FF] text-white py-6 rounded-2xl flex justify-center items-center gap-3 hover:opacity-90 transition-all uppercase text-[12px] tracking-widest font-black shadow-lg">
+                    <i data-lucide="share-2" class="w-5 h-5"></i>
+                    Запись через VK
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white py-20 px-6 border-t border-mv-blush">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="text-center md:text-left">
+                <h2 class="text-3xl font-serif tracking-widest mb-4 text-mv-taupe uppercase">My Dream</h2>
+                <p class="text-[10px] uppercase opacity-40 tracking-widest font-black">© 2025 • Perm</p>
+            </div>
+            <div class="text-center md:text-right">
+                <p class="font-serif italic text-lg text-mv-taupe mb-1">г. Пермь, ул. 5-я Линия, 1Б</p>
+                <p class="font-black text-mv-gold tracking-widest text-lg">+7 (922) 373-06-05</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('glass', 'py-4', 'shadow-md');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.remove('glass', 'py-4', 'shadow-md');
+                nav.classList.add('py-6');
+            }
+        });
+
+        function toggleMenu(show) {
+            const menu = document.getElementById('mobile-menu');
+            if (show) {
+                menu.classList.remove('translate-y-full');
+                menu.classList.add('translate-y-0');
+            } else {
+                menu.classList.add('translate-y-full');
+                menu.classList.remove('translate-y-0');
+            }
+        }
+    </script>
+</body>
+</html>```
